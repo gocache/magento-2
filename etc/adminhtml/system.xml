@@ -33,7 +33,6 @@
                     <field id="ttl_browser" type="select" translate="label comment" sortOrder="30" showInDefault="1" showInWebsite="0" showInStore="0">
                         <label>Tempo de expiração de cache no browser</label>
                         <source_model>GoCache\CDN\Model\System\Config\Source\TtlBrowser</source_model>
-                        <default>3600</default>
                     </field>
                     <field id="enable_log" type="select" translate="label comment" sortOrder="35" showInDefault="1" showInWebsite="0" showInStore="0">
                         <label>Log de interação com a GoCache</label>
