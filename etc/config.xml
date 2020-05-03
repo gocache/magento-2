@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <system>
+            <full_page_cache>
+                <gocache>
+                    <token></token>
+                    <main_domain></main_domain>
+                    <ttl_cdn>86400</ttl_cdn>
+                    <ttl_browser>604800</ttl_browser>
+                    <smartcache>1</smartcache>
+                    <enable_log>1</enable_log>
+                </gocache>
+            </full_page_cache>
+        </system>
+    </default>
+</config>

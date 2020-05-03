@@ -1,0 +1,11 @@
+<?php
+// @codingStandardsIgnoreFile
+?>
+<button class="scalable" type="button" id="<?= $block->getHtmlId() ?>" data-mage-init='{"testToken":{
+    "url": "<?= /* @escapeNotVerified */ $block->getAjaxUrl() ?>",
+    "elementId": "<?= $block->getHtmlId() ?>",
+    "successText": "<?= /* @escapeNotVerified */ __('Sucesso! Testar novamente?') ?>",
+    "failedText": "<?= /* @escapeNotVerified */ __('Token incorreto! Testar novamente?') ?>",
+    "fieldMapping": "<?= /* @escapeNotVerified */ $block->getFieldMapping() ?>"}, "validation": {}}'>
+    <span><span><span id="<?= $block->getHtmlId() ?>_result"><?= $block->escapeHtml($block->getButtonLabel()) ?></span></span></span>
+</button>
