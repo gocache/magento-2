@@ -42,11 +42,16 @@ class UpdateConfig implements ObserverInterface
     /**
      * @param Observer $observer
      * @return void
+     * @throws \Zend_Http_Client_Exception
      */
     public function execute(Observer $observer)
     {
         $fpcParams = $this->request->getParam('groups');
         $fields = $fpcParams['full_page_cache']['groups']['gocache']['fields'];
+        if (!is_array($fields)) {
+            return;
+        }
+
         $param = [];
         foreach ($fields as $key=>$value) {
             if (!in_array($key, array_keys($this->_mapConfig))) {
