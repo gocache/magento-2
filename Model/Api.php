@@ -38,7 +38,7 @@ class Api
         Config $config,
         Data $helper,
         LoggerInterface $logger,
-        \Zend_Http_Client $client,
+        \Zend_Http_Client $client
     )
     {
         $this->config = $config;
