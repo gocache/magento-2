@@ -39,7 +39,7 @@ class FlushAllCache implements ObserverInterface
             return;
         }
 
-        if ($this->config->getCacheType() !== Config::GOCACHE) {
+        if ($this->config->getType() !== Config::GOCACHE) {
             return;
         }
 

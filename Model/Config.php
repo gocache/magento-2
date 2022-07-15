@@ -64,9 +64,4 @@ class Config extends \Magento\PageCache\Model\Config
     {
         return $this->_scopeConfig->getValue(self::XML_GOCACHE_ENABLE_LOG);
     }
-
-    public function getCacheType()
-    {
-        return $this->_scopeConfig->getValue(\Magento\PageCache\Model\Config::XML_PAGECACHE_TYPE);
-    }
 }
