@@ -20,7 +20,7 @@ class Api
      */
     private $helper;
     /**
-     * @var LoggerInterface
+     * @var Logger
      */
     private $logger;
     /**
@@ -33,18 +33,19 @@ class Api
      * @param Config $config
      * @param Data $helper
      * @param \Zend_Http_Client $client
+     * @param Logger $logger
      */
     public function __construct(
         Config $config,
         Data $helper,
-        LoggerInterface $logger,
         \Zend_Http_Client $client,
+        Logger $logger
     )
     {
         $this->config = $config;
         $this->helper = $helper;
-        $this->client = $client;
         $this->logger = $logger;
+        $this->client = $client;
     }
 
     /**
@@ -111,7 +112,7 @@ class Api
         $this->client->setParameterPost($body);
         $response = $this->client->request('DELETE');
 
-        $this->logger->debug("GOCACHE PURGE", [
+        $this->logger->info("GOCACHE PURGE", [
             'url' => $endpoint,
             'header' => $header,
             'body' => $body,
@@ -133,7 +134,7 @@ class Api
         $header = $this->getTokenHeader($this->config->getToken());
         $this->client->setHeaders($header);
         $response = $this->client->request('DELETE');
-        $this->logger->debug("GOCACHE FLUSH ALL", [
+        $this->logger->info("GOCACHE FLUSH ALL", [
             'url' => $fullEndpoint,
             'header' => $header,
             'request' => $this->client->getLastRequest(),
@@ -158,7 +159,7 @@ class Api
         ];
         $this->client->setParameterPost($body);
         $response = $this->client->request('DELETE');
-        $this->logger->debug("GOCACHE PURGE CONTENT TYPE", [
+        $this->logger->info("GOCACHE PURGE CONTENT TYPE", [
             'header' => $header,
             'request' => $this->client->getLastRequest(),
             'response' => $response->getBody()
@@ -180,7 +181,7 @@ class Api
         $header = $this->getTokenHeader($token);
         $this->client->setHeaders($header);
         $response = $this->client->request('GET');
-        $this->logger->debug("GOCACHE TEST TOKEN", [
+        $this->logger->info("GOCACHE TEST TOKEN", [
             'url' => $fullEndpoint,
             'header' => $header,
             'request' => $this->client->getLastRequest(),
@@ -203,7 +204,7 @@ class Api
         $this->client->setHeaders($header);
         $this->client->setParameterPost($param);
         $response = $this->client->request('PUT');
-        $this->logger->debug("GOCACHE UPDATE CONFIG", [
+        $this->logger->info("GOCACHE UPDATE CONFIG", [
             'url' => $fullEndpoint,
             'header' => $header,
             'request' => $this->client->getLastRequest(),
@@ -220,6 +221,7 @@ class Api
     private function prepareTagsArray($domain, array $tags = [])
     {
         $out = [];
+//        $out[sprintf("urls[%s]", 1)] = $domain;
         foreach ($tags as $key=>$tag) {
             $out[sprintf("tag[%s]", $key)] = $tag;
         }
