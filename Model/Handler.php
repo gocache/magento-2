@@ -36,7 +36,7 @@ class Handler extends BaseHandler
         DriverInterface $filesystem,
         Config $config,
         ?string $filePath = null,
-        ?string $fileName = null,
+        ?string $fileName = null
     )
     {
         parent::__construct($filesystem, $filePath, $fileName);
