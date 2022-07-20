@@ -72,7 +72,7 @@ class Api
     private function getConfigEndpoint()
     {
         $domain = $this->config->getMainDomain();
-        return $this->getPurgeUri($domain);
+        return $this->getConfigUri($domain);
     }
 
     /**
