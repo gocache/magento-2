@@ -3,7 +3,7 @@
 ## Install
 
 ```
-$ bin/composer require gocache/cdn:dev-support_magento_2_4
+$ bin/composer require gocache/cdn:2.3.7.4
 $ bin/magento module:enable GoCache_CDN
 $ bin/magento setup:upgrade
 $ bin/magento cache:flush
