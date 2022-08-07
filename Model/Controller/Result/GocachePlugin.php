@@ -2,24 +2,35 @@
 
 namespace GoCache\CDN\Model\Controller\Result;
 
-use Laminas\Http\Header\HeaderInterface as HttpHeaderInterface;
 use Magento\Framework\App\PageCache\Kernel;
 use Magento\Framework\App\Response\Http as ResponseHttp;
-use Magento\Framework\App\State as AppState;
 use Magento\Framework\Controller\ResultInterface;
 use Magento\Framework\Registry;
-use Magento\PageCache\Model\Cache\Type as CacheType;
-use Magento\PageCache\Model\Config;
 
 class GocachePlugin
 {
 
     const HEADER_CACHE_TAGS = 'Cache-Tags';
 
-    private \Magento\Framework\App\Cache\StateInterface $cacheState;
-    private \GoCache\CDN\Model\Config $config;
-    private Registry $registry;
-    private Kernel $kernel;
+    /**
+     * @var \Magento\Framework\App\Cache\StateInterface
+     */
+    private $cacheState;
+
+    /**
+     * @var \GoCache\CDN\Model\Config
+     */
+    private $config;
+
+    /**
+     * @var Registry
+     */
+    private $registry;
+
+    /**
+     * @var Kernel
+     */
+    private  $kernel;
 
     /**
      * @param \Magento\Framework\App\Cache\StateInterface $cacheState
