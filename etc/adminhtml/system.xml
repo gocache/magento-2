@@ -22,22 +22,6 @@
                         <button_label>Validar Credenciais</button_label>
                         <frontend_model>GoCache\CDN\Block\Adminhtml\System\Config\TestToken</frontend_model>
                     </field>
-                    <field id="smartcache" type="select" translate="label comment" sortOrder="20" showInDefault="1" showInWebsite="0" showInStore="0">
-                        <label>SmartCache</label>
-                        <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
-                    </field>
-                    <field id="ttl_cdn" type="select" translate="label comment" sortOrder="25" showInDefault="1" showInWebsite="0" showInStore="0">
-                        <label>Tempo de expiração de cache na CDN</label>
-                        <source_model>GoCache\CDN\Model\System\Config\Source\TtlCdn</source_model>
-                    </field>
-                    <field id="ttl_browser" type="select" translate="label comment" sortOrder="30" showInDefault="1" showInWebsite="0" showInStore="0">
-                        <label>Tempo de expiração de cache no browser</label>
-                        <source_model>GoCache\CDN\Model\System\Config\Source\TtlBrowser</source_model>
-                    </field>
-                    <field id="enable_log" type="select" translate="label comment" sortOrder="35" showInDefault="1" showInWebsite="0" showInStore="0">
-                        <label>Log de interação com a GoCache</label>
-                        <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
-                    </field>
                 </group>
             </group>
         </section>
