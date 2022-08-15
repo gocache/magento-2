@@ -31,7 +31,7 @@ Execute os comandos abaixo na pasta onde o Magento foi instalado:
 MAGENTO_DOCUMENT_ROOT=/var/www/magento2
 COMPOSER_MEMORY_LIMIT=-1
 
-composer require gocache/cdn:2.3.7.4
+composer require gocache/cdn:1.0.4
 
 cd $MAGENTO_DOCUMENT_ROOT
 php bin/magento module:enable GoCache_CDN
