@@ -17,8 +17,8 @@ previamente cacheadas, aumentando assim a velocidade e eficiência do cache.
 - Conta criada na GoCache com um token gerado
 - Produtos cadastrados no Magento precisam pertencer à alguma outra categoria sem ser a categoria padrão
 - Desligar o Smart Cache no painel de GoCache
-- PHP 7.3 ou acima
-- Magento 2.3
+- PHP 7.3 ou superior
+- Magento 2.3 ou 2.4
 
 ## Instalação
 
